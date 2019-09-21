@@ -1,0 +1,2 @@
+﻿# KsWare.Configuration
+KsWare.Configuration
