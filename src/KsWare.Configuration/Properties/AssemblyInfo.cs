@@ -6,7 +6,7 @@ using System.Windows.Markup;
 
 
 [assembly: AssemblyTitle("KsWare.Configuration")]
-[assembly: AssemblyDescription("Extentend System.Configuration classes. property registration (w/o attributes); IList<T>/IDctionary<string,T> support.")]
+[assembly: AssemblyDescription("Extentend System.Configuration classes. property registration (w/o attributes), IList&lt;T>/IDctionary&lt;string,T> support.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KsWare")]
 [assembly: AssemblyProduct("KsWare Framework")]
