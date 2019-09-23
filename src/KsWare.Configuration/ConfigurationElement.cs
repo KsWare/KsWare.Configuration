@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -10,6 +11,7 @@ namespace KsWare.Configuration {
 		private static readonly Dictionary<Type, System.Configuration.ConfigurationPropertyCollection> TypeProperties =
 			new Dictionary<Type, System.Configuration.ConfigurationPropertyCollection>();
 
+		[NotNull]
 		protected internal static ConfigurationProperty Register(Type declaringType, ConfigurationProperty property) {
 			if (!TypeProperties.TryGetValue(declaringType, out var list)) {
 				list = new System.Configuration.ConfigurationPropertyCollection();
@@ -20,11 +22,13 @@ namespace KsWare.Configuration {
 			return property;
 		}
 
+		[NotNull]
 		protected internal static ConfigurationProperty Register(string name, Type type,
 			Type declaringType) {
 			return Register(declaringType, new ConfigurationProperty(name, type));
 		}
 
+		[NotNull]
 		protected internal static ConfigurationProperty Register(string name, Type type,
 			Type declaringType,
 			object defaultValue) {
@@ -33,12 +37,14 @@ namespace KsWare.Configuration {
 					null));
 		}
 
+		[NotNull]
 		protected internal static ConfigurationProperty Register(string name, Type type,
 			Type declaringType,
 			object defaultValue, ConfigurationPropertyOptions options) {
 			return Register(declaringType, new ConfigurationProperty(name, type, defaultValue, options));
 		}
 
+		[NotNull]
 		protected internal static ConfigurationProperty Register(
 			string name,
 			Type type,
@@ -51,6 +57,7 @@ namespace KsWare.Configuration {
 				new ConfigurationProperty(name, type, defaultValue, typeConverter, validator, options, null));
 		}
 
+		[NotNull]
 		protected internal static ConfigurationProperty Register(
 			string name,
 			Type type,
