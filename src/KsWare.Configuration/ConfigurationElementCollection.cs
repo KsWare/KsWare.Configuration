@@ -64,15 +64,24 @@ namespace KsWare.Configuration {
 
 
 		public T this[int index] {
-			get => (T) base.BaseGet(index);
+			get => (T) BaseGet(index);
 			set {
-				if (base.BaseGet(index) != null) { base.BaseRemoveAt(index); }
+				if (BaseGet(index) != null) { BaseRemoveAt(index); }
 
 				base.BaseAdd(index, value);
 			}
 		}
 
-		public T this[string name] => (T) base.BaseGet(name);
+		public new T this[string name] {
+			get => (T) BaseGet(name);
+			set {
+				BaseRemove(name);
+				BaseAdd(value);
+				//TODO check key
+			}
+		}
+
+		protected object GetProperty(string propertyName) => base[propertyName];
 
 		protected override System.Configuration.ConfigurationElement CreateNewElement() => new T();
 

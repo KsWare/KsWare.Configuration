@@ -60,6 +60,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationElementCollection-IDictionary.cs" />
     <Compile Include="ConfigurationElementCollection-IList.cs" />
     <Compile Include="ConfigurationElementCollection.cs" />
     <Compile Include="ConfigurationElement.cs" />
