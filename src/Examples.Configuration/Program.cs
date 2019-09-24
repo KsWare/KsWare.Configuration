@@ -92,7 +92,10 @@ namespace Examples.Configuration {
 			typeof(ExampleSection),
 			MeasurementUnits.None, CaseInsensitiveEnumConfigConverter<MeasurementUnits>.Default, null, ConfigurationPropertyOptions.None);
 
-		public string StringValue => (string) base[StringValueProperty];
+		public string StringValue {
+			get => (string) base[StringValueProperty];
+			set => base[StringValueProperty]=value;
+		}
 
 		public bool BooleanValue => (bool) base[BoolValueProperty];
 
