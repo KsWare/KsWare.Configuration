@@ -2,7 +2,7 @@
 Extentend System.Configuration classes. property registration (w/o attributes), IList&lt;T>/IDictionary&lt;string,T> support.
 
 - [ConfigurationElement](#ConfigurationElement)
-- [ConfigurationElementCollection&lt;Tgt;](#ConfigurationElementCollection&lt;T&gt;)
+- [ConfigurationElementCollection&lt;T&gt;](#ConfigurationElementCollection&lt;T&gt;)
 
 ## ConfigurationElement
 - derives from [`System.Configuration.ConfigurationElement`](https://docs.microsoft.com/en-US/dotnet/api/system.configuration.configurationelement)
@@ -11,8 +11,8 @@ Extentend System.Configuration classes. property registration (w/o attributes), 
 ## ConfigurationElementCollection&lt;T&gt;
 - derives from [`System.Configuration.ConfigurationElementCollection`](https://docs.microsoft.com/en-US/dotnet/api/system.configuration.configurationelementcollection)
 - added [property registration](#Property-registration)
-- implements `IList&lt;T&gt;`
-- implements `IDictionary&lt;string,T&gt;`
+- implements `IList<T>`
+- implements `IDictionary<string,T>`
 
 Differences to [System.ConfigurationElementCollection](https://docs.microsoft.com/de-de/dotnet/api/system.configuration.configurationelementcollection):
 - `public T this[string name]` instead of `protected internal object this[string propertyName]`
