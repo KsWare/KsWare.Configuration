@@ -47,7 +47,7 @@ namespace KsWare.Configuration {
 			return value != null;
 		}
 
-		ICollection<string> IDictionary<string, T>.Keys => BaseGetAllKeys().Cast<string>().ToList();
+		public ICollection<string> Keys => BaseGetAllKeys().Cast<string>().ToList();
 		ICollection<T> IDictionary<string, T>.Values => this;
 
 		private class DictionaryEnumerator : IEnumerator<KeyValuePair<string, T>> {
